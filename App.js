@@ -1,18 +1,16 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
-import { 
-    Text, 
-    View 
-} from 'react-native'
 
 import store from './store'
+import ThemeProvider from './components/presentational/ThemeProvider'
+import DecksList from './components/container/DecksList'
 
 class App extends Component {
   render = () => (
     <Provider store={store}>
-      <View>
-        <Text>FlashCards!</Text>
-      </View>
+      <ThemeProvider>
+        <DecksList />
+      </ThemeProvider>
     </Provider>
   )
 }
