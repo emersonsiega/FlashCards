@@ -3,13 +3,13 @@ import { Provider } from 'react-redux'
 
 import store from './store'
 import ThemeProvider from './components/presentational/ThemeProvider'
-import DecksList from './components/container/DecksList'
+import BottomNavigator from './components/presentational/BottomNavigator'
 
 class App extends Component {
   render = () => (
     <Provider store={store}>
       <ThemeProvider>
-        <DecksList />
+        <BottomNavigator />
       </ThemeProvider>
     </Provider>
   )
