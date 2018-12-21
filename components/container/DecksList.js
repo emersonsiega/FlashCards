@@ -9,7 +9,7 @@ const View = styled.View`
     justify-content: space-around;
     align-items: center;
     padding: 10px;
-    background-color: ${props => props.theme.headerBackground};
+    background-color: ${props => props.theme.background};
 `
 
 const DecksList = () => (

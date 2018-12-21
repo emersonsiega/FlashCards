@@ -6,6 +6,7 @@ const theme = {
     textDark: '#333',
     inactiveMenu: '#8A8A8A',
     headerBackground: '#EFEFEF',
+    background: '#ffffff',
     main: '#363CBC',
     success: '#5DBB30',
     error: '#EE5959',
