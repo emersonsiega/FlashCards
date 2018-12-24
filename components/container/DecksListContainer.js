@@ -1,28 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import styled from 'styled-components/native'
 
-const View = styled.View`
-    flex: 1;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    background-color: ${props => props.theme.background};
-`
-
-const Text = styled.Text``
+import ScrollView from '../presentational/ScrollView'
+import Deck from '../presentational/Deck'
 
 const DecksList = ({ decks = [] }) => (
-    <View>
+    <ScrollView>
         {decks.map( deck => (
-            <Text
+            <Deck 
                 key={deck.title}
-                background={deck.color}
-            >
-                {deck.title}
-            </Text>
+                {...deck}
+                onPress={ () => alert('deck pressed') }
+            />
         ))}
-    </View>
+    </ScrollView>
 )
 
 const mapStateToProps = ({decks = {}}) => ({

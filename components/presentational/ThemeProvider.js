@@ -3,11 +3,13 @@ import { ThemeProvider as Provider } from 'styled-components/native'
 
 const theme = {
     text: '#EFEFEF',
+    subText: '#D5D5D5',
     textDark: '#333',
     inactiveMenu: '#8A8A8A',
     headerBackground: '#EFEFEF',
     background: '#ffffff',
     main: '#363CBC',
+    border: '#333',
     success: '#5DBB30',
     error: '#EE5959',
     cardColors: [
