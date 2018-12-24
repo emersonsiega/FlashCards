@@ -7,7 +7,7 @@ const DeckContainer = styled.View`
     height: 90px;
     width: 100%;
     border-radius: 5px;
-    background: ${props => props.color};
+    background-color: ${props => props.color};
     box-shadow: 0px 2px 6px ${props => props.theme.border};
     margin-top: 10px;
     justify-content: center;
