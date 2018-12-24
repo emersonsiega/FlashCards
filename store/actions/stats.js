@@ -1,3 +1,4 @@
+import { getStats } from '../../api/stats'
 const FETCH_STATS = 'FETCH_STATS'
 
 const fetchStats = (stats) => ({
@@ -6,12 +7,13 @@ const fetchStats = (stats) => ({
 })
 
 const handleFetchStats = () => dispatch => {
-    const stats = {}
-    dispatch(fetchStats(stats))
+    getStats()
+        .then( stats => dispatch(fetchStats(stats)) )
 }
 
 export {
     FETCH_STATS,
 
+    fetchStats,
     handleFetchStats,
 }

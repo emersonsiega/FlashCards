@@ -1,3 +1,4 @@
+import { getDecks } from '../../api/decks'
 const FETCH_DECKS = 'FETCH_DECKS'
 
 const fetchDecks = (decks) => ({
@@ -6,12 +7,13 @@ const fetchDecks = (decks) => ({
 })
 
 const handleFetchDecks = () => dispatch => {
-    const decks = {}
-    dispatch(fetchDecks(decks))
+    getDecks()
+        .then( decks => dispatch(fetchDecks(decks)) )
 }
 
 export {
     FETCH_DECKS,
 
+    fetchDecks,
     handleFetchDecks,
 }

@@ -2,26 +2,26 @@ import React from 'react'
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
 import { MaterialCommunityIcons, MaterialIcons, Ionicons } from '@expo/vector-icons'
 
-import DecksList from '../container/DecksList'
+import DecksListContainer from '../container/DecksListContainer'
 import { theme } from './ThemeProvider'
 
 const BottomNavigator = createBottomTabNavigator({
     Decks: {
-        screen: DecksList,
+        screen: DecksListContainer,
         navigationOptions: {
             tabBarLabel: 'DECKS',
             tabBarIcon: ({ tintColor }) => <MaterialCommunityIcons name='cards' size={30} color={tintColor} />
         }
     },
     NewDeck: {
-        screen: DecksList,
+        screen: DecksListContainer,
         navigationOptions: {
             tabBarLabel: 'NEW DECK',
             tabBarIcon: ({ tintColor }) => <MaterialIcons name='add-box' size={30} color={tintColor} />
         }
     },
     Stats: {
-        screen: DecksList,
+        screen: DecksListContainer,
         navigationOptions: {
             tabBarLabel: 'STATS',
             tabBarIcon: ({ tintColor }) => <Ionicons name='md-podium' size={30} color={tintColor}/>
