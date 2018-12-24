@@ -2,8 +2,9 @@ import React from 'react'
 import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
 import { MaterialCommunityIcons, MaterialIcons, Ionicons } from '@expo/vector-icons'
 
-import DecksListContainer from '../container/DecksListContainer'
 import { theme } from './ThemeProvider'
+import DecksListContainer from '../container/DecksListContainer'
+import NewDeckContainer from '../container/NewDeckContainer'
 
 const BottomNavigator = createBottomTabNavigator({
     Decks: {
@@ -14,7 +15,7 @@ const BottomNavigator = createBottomTabNavigator({
         }
     },
     NewDeck: {
-        screen: DecksListContainer,
+        screen: NewDeckContainer,
         navigationOptions: {
             tabBarLabel: 'NEW DECK',
             tabBarIcon: ({ tintColor }) => <MaterialIcons name='add-box' size={30} color={tintColor} />

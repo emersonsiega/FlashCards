@@ -9,7 +9,9 @@ const DecksList = ({ decks = [] }) => (
         {decks.map( deck => (
             <Deck 
                 key={deck.title}
-                {...deck}
+                title={deck.title}
+                color={deck.color}
+                questions={deck.questions}
                 onPress={ () => alert('deck pressed') }
             />
         ))}

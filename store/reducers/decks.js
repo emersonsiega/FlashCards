@@ -1,4 +1,7 @@
-import { FETCH_DECKS } from '../actions/decks'
+import { 
+    FETCH_DECKS,
+    ADD_DECK,
+} from '../actions/decks'
 
 const decks = (state = {}, action) => {
     switch( action.type ) {
@@ -6,6 +9,13 @@ const decks = (state = {}, action) => {
             return {
                 ...state,
                 ...action.decks
+            }
+        case ADD_DECK:
+            return {
+                ...state,
+                [action.deck.title] : {
+                    ...action.deck
+                }
             }
         default:
             return state

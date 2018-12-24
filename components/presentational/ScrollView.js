@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         marginRight: 10,
-        marginLeft: 10
+        marginLeft: 10,
+        marginBottom: 10
     }
 })
 

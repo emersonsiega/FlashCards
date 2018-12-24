@@ -6,12 +6,12 @@ import ThemeProvider from './components/presentational/ThemeProvider'
 import BottomNavigatorContainer from './components/container/BottomNavigatorContainer'
 import StatusBar from './components/presentational/StatusBar'
 
-//import { getDecks, setDecks, removeDecks } from './api/decks'
+import { getDecks, setDecks, removeDecks } from './api/decks'
 
 class App extends Component {
   componentDidMount() {
     //TODO: Remove
-    // removeDecks()
+    removeDecks()
     // setDecks({
     //   'Math': {
     //     title: 'Math',

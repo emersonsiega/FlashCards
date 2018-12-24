@@ -9,7 +9,7 @@ const theme = {
     headerBackground: '#EFEFEF',
     background: '#ffffff',
     main: '#363CBC',
-    border: '#333',
+    border: '#989898',
     success: '#5DBB30',
     error: '#EE5959',
     cardColors: [

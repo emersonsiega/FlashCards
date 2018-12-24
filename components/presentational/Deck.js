@@ -27,7 +27,7 @@ const SubTitle = styled(Text)`
     color: ${props => props.theme.subText};
 `
 
-const Deck = ({ title, color, questions, onPress }) => (
+const Deck = ({ title, color, questions = [], onPress }) => (
     <DeckContainer color={color}>
         <TouchableDeck onPress={onPress}>
             <>
