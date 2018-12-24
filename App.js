@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import store from './store'
 import ThemeProvider from './components/presentational/ThemeProvider'
 import BottomNavigatorContainer from './components/container/BottomNavigatorContainer'
+import StatusBar from './components/presentational/StatusBar'
 
 //import { getDecks, setDecks, removeDecks } from './api/decks'
 
@@ -47,7 +48,10 @@ class App extends Component {
   render = () => (
     <Provider store={store}>
       <ThemeProvider>
-        <BottomNavigatorContainer />
+        <>
+          <StatusBar />
+          <BottomNavigatorContainer />
+        </>
       </ThemeProvider>
     </Provider>
   )
