@@ -9,6 +9,7 @@ const TouchableMainColored = styled.TouchableOpacity`
     align-items: center;
     background-color: ${props => props.theme.main};
     opacity: ${props => props.disabled ? 0.5 : 1};
+    box-shadow: 0px 0px 6px ${props => props.theme.border};
     border-radius: 5px;
     height: 87px;
     width: 100%;

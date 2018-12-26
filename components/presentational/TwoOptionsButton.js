@@ -7,6 +7,7 @@ const View = styled.View`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 6px ${props => props.theme.border};
 `
 
 const LeftButton = styled.TouchableOpacity`
