@@ -5,10 +5,12 @@ import ScrollView from '../presentational/ScrollView'
 import Deck from '../presentational/Deck'
 import EmptyListText from '../presentational/EmptyListText'
 
-const DecksList = ({ decks = [] }) => {
+const DecksListContainer = ({ decks = [], toDeckView }) => {
     if ( decks.length === 0 ) {
         return <EmptyListText />
     }
+
+    console.log('deckslistcontainer: ', decks)
 
     return (
         <ScrollView>
@@ -18,7 +20,7 @@ const DecksList = ({ decks = [] }) => {
                     title={deck.title}
                     color={deck.color}
                     questions={deck.questions}
-                    onPress={ () => alert('deck pressed') }
+                    onPress={ () => toDeckView(deck.title) }
                 />
             ))}
         </ScrollView>
@@ -29,4 +31,12 @@ const mapStateToProps = ({decks = {}}) => ({
     decks: Object.values(decks) 
 })
 
-export default connect(mapStateToProps)(DecksList)
+const mapDispatchToProps = (dispatch, {navigation}) => ({
+    toDeckView: (deckTitle) => navigation.navigate(
+        'DeckView', {
+            'deckTitle': deckTitle
+        }
+    )
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(DecksListContainer)

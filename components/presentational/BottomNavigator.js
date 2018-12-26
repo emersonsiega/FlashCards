@@ -1,10 +1,11 @@
 import React from 'react'
-import { createAppContainer, createBottomTabNavigator } from 'react-navigation'
+import { createAppContainer, createBottomTabNavigator, createStackNavigator } from 'react-navigation'
 import { MaterialCommunityIcons, MaterialIcons, Ionicons } from '@expo/vector-icons'
 
 import { theme } from './ThemeProvider'
 import DecksListContainer from '../container/DecksListContainer'
 import NewDeckContainer from '../container/NewDeckContainer'
+import DeckViewContainer from '../container/DeckViewContainer'
 
 const BottomNavigator = createBottomTabNavigator({
     Decks: {
@@ -49,4 +50,24 @@ const BottomNavigator = createBottomTabNavigator({
     }
 })
 
-export default createAppContainer(BottomNavigator)
+const StackNavigator = createStackNavigator({
+    Home: {
+        screen: BottomNavigator
+    },
+    DeckView: {
+        screen: DeckViewContainer,
+        navigationOptions: {
+            title: 'Deck',
+            backTitle: '',
+            headerTintColor: theme.textDark,
+            headerStyle: {
+                backgroundColor: theme.headerBackground
+            },
+            headerTitleStyle: {
+                fontSize: 25
+            }
+        }
+    }
+})
+
+export default createAppContainer(StackNavigator)
