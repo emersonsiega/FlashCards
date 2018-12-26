@@ -3,9 +3,11 @@ import {
     ADD_DECK,
 } from '../actions/decks'
 
+import { formatDeck } from '../../utils/DeckFormatter'
+
 const decks = (state = {}, action) => {
     switch( action.type ) {
-        case FETCH_DECKS:
+        case FETCH_DECKS:            
             return {
                 ...state,
                 ...action.decks
@@ -13,9 +15,7 @@ const decks = (state = {}, action) => {
         case ADD_DECK:
             return {
                 ...state,
-                [action.deck.title] : {
-                    ...action.deck
-                }
+                ...formatDeck(action.deck)
             }
         default:
             return state

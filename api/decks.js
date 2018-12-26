@@ -17,6 +17,8 @@
  */
 import { AsyncStorage } from 'react-native'
 
+import { formatDeck } from '../utils/DeckFormatter'
+
 const DECKS_STORAGE_KEY = 'FlashCards:decks'
 
 const getDecks = () => {
@@ -36,7 +38,7 @@ const setDecks = ( decks ) => {
 const addDeck = ( deck ) => {
     return AsyncStorage.mergeItem( 
         DECKS_STORAGE_KEY, 
-        JSON.stringify( deck ) 
+        JSON.stringify( formatDeck(deck) ) 
     )
 }
 
