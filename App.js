@@ -11,7 +11,7 @@ import { getDecks, setDecks, removeDecks } from './api/decks'
 class App extends Component {
   componentDidMount() {
     //TODO: Remove
-    removeDecks()
+    // removeDecks()
     // setDecks({
     //   'Math': {
     //     title: 'Math',
