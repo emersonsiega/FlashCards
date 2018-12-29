@@ -58,7 +58,6 @@ const StackNavigator = createStackNavigator({
         screen: DeckViewContainer,
         navigationOptions: {
             title: 'Deck',
-            backTitle: '',
             headerTintColor: theme.textDark,
             headerStyle: {
                 backgroundColor: theme.headerBackground

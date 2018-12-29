@@ -10,8 +10,6 @@ const DecksListContainer = ({ decks = [], toDeckView }) => {
         return <EmptyListText />
     }
 
-    console.log('deckslistcontainer: ', decks)
-
     return (
         <ScrollView>
             {decks.map( deck => (
@@ -31,12 +29,13 @@ const mapStateToProps = ({decks = {}}) => ({
     decks: Object.values(decks) 
 })
 
+//TODO: Navigation doesn't work!
 const mapDispatchToProps = (dispatch, {navigation}) => ({
-    toDeckView: (deckTitle) => navigation.navigate(
+    toDeckView: (deckTitle) => navigation.dispatch(navigation.navigate(
         'DeckView', {
             'deckTitle': deckTitle
         }
-    )
+    ))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DecksListContainer)
