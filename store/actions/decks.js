@@ -1,32 +1,41 @@
-import { getDecks, addDeck as addDeckApi } from '../../api/decks'
+import { getDecks, addDeck, removeDeck } from '../../api/decks'
 
 const FETCH_DECKS = 'FETCH_DECKS'
 const ADD_DECK = 'ADD_DECK'
-
-const fetchDecks = (decks) => ({
-    type: FETCH_DECKS,
-    decks
-})
+const DELETE_DECK = 'DELETE_DECK'
 
 const handleFetchDecks = () => dispatch => {
-    getDecks()
-        .then( decks => dispatch(fetchDecks(decks)) )
+  getDecks().then(decks =>
+    dispatch({
+      type: FETCH_DECKS,
+      decks,
+    })
+  )
 }
 
-const addDeck = (deck) => ({
-    type: ADD_DECK,
-    deck
-})
+const handleAddDeck = deck => dispatch => {
+  addDeck(deck).then(
+    dispatch({
+      type: ADD_DECK,
+      deck,
+    })
+  )
+}
 
-const handleAddDeck = (deck) => dispatch => {
-    addDeckApi( deck )
-        .then( dispatch(addDeck(deck)) )
+const handleRemoveDeck = deckTitle => dispatch => {
+  removeDeck(deckTitle).then(
+    dispatch({
+      type: DELETE_DECK,
+      deckTitle,
+    })
+  )
 }
 
 export {
-    FETCH_DECKS,
-    ADD_DECK,
-
-    handleFetchDecks,
-    handleAddDeck,
+  FETCH_DECKS,
+  ADD_DECK,
+  DELETE_DECK,
+  handleFetchDecks,
+  handleAddDeck,
+  handleRemoveDeck,
 }

@@ -10,8 +10,8 @@
  *              },
  *          ]
  *      },
- *      "deck2": { 
- *          ... 
+ *      "deck2": {
+ *          ...
  *      }
  *  }
  */
@@ -22,37 +22,29 @@ import { formatDeck } from '../utils/DeckFormatter'
 const DECKS_STORAGE_KEY = 'FlashCards:decks'
 
 const getDecks = () => {
-    return AsyncStorage.getItem( DECKS_STORAGE_KEY )
-        .then( decks => {
-            const converted = JSON.parse(decks)
-            console.log('DECKS FROM STORAGE: ', converted)
-            return converted
-        })
+  return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(decks => {
+    const converted = JSON.parse(decks)
+    return converted
+  })
 }
 
-const setDecks = ( decks ) => {
-    const toSave = JSON.stringify(decks)
-    return AsyncStorage.setItem( DECKS_STORAGE_KEY, toSave )
+const setDecks = decks => {
+  return AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(decks))
 }
 
-const addDeck = ( deck ) => {
-    return AsyncStorage.mergeItem( 
-        DECKS_STORAGE_KEY, 
-        JSON.stringify( formatDeck(deck) ) 
-    )
+const addDeck = deck => {
+  return AsyncStorage.mergeItem(DECKS_STORAGE_KEY, JSON.stringify(formatDeck(deck)))
 }
 
-const removeDeck = ( deckName ) => {
-    const decks = getDecks()
-    delete decks[deckName]
-    decks[deckName] = undefined
+const removeDeck = async deckName => {
+  const decks = await getDecks()
+  delete decks[deckName]
 
-    return setDecks( decks )
+  return setDecks(decks)
 }
 
 const removeDecks = () => {
-    AsyncStorage.removeItem( DECKS_STORAGE_KEY )
-        .then( console.log('decks removed') )
+  return AsyncStorage.removeItem(DECKS_STORAGE_KEY)
 }
 
 // I think it's not necessary
@@ -73,14 +65,13 @@ const removeDecks = () => {
 
 //remove card
 
-
 //etc
 
 export {
-    getDecks,
-    setDecks,
-    addDeck,
-    // addQuestion,
-    removeDeck,
-    removeDecks,
+  getDecks,
+  setDecks,
+  addDeck,
+  // addQuestion,
+  removeDeck,
+  removeDecks,
 }

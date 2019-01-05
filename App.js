@@ -6,12 +6,12 @@ import ThemeProvider from './components/presentational/ThemeProvider'
 import BottomNavigatorContainer from './components/container/BottomNavigatorContainer'
 import StatusBar from './components/presentational/StatusBar'
 
-import { getDecks, setDecks, removeDecks } from './api/decks'
+// import { getDecks, setDecks, removeDecks } from './api/decks'
 
 class App extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     //TODO: Remove
-    // removeDecks()
+    // await removeDecks()
     // setDecks({
     //   'Math': {
     //     title: 'Math',
@@ -42,7 +42,6 @@ class App extends Component {
     //     ]
     //   }
     // }).then(console.log('Default decks saved'))
-    
   }
 
   render = () => (
