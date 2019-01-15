@@ -1,124 +1,84 @@
 import React, { Component } from 'react'
 import styled from 'styled-components/native'
 
-import { theme } from './ThemeProvider'
 import MainButton from './MainButton'
-import Text from './Text'
 
 const View = styled.KeyboardAvoidingView`
-    flex: 1;
-    justify-content: space-between;
-    margin: 10px;
+  flex: 1;
+  justify-content: flex-start;
+  padding: 20px;
+  background: ${props => props.theme.background};
+  align-items: center;
 `
 
 const Title = styled.Text`
-    font-size: 25px;
-    color: ${props => props.theme.textDark};
+  font-size: 25px;
+  color: ${props => props.theme.text};
 `
 
 const Input = styled.TextInput`
-    border-bottom-width: 1px;
-    border-bottom-color: ${props => props.theme.border};
-    box-shadow: 0px 1px 1px ${props => props.theme.border};
-    font-size: 22px;
-    padding: 5px;
-    margin: 2px;
-    color: ${props => props.theme.inactiveMenu};
+  border-bottom-width: 0.5px;
+  border-bottom-color: ${props => props.theme.inactiveBorder};
+  font-size: 22px;
+  padding: 5px;
+  margin: 5px;
+  color: ${props => props.theme.text};
+  background: ${props => props.theme.background};
+  margin-bottom: 20px;
 `
 
-const InputGroup = styled.View``
-
-const Colors = styled.View`
-    flex-direction: row;
-    flex-wrap: wrap;
+const InputGroup = styled.View`
+  width: 100%;
 `
 
-const Color = styled.TouchableOpacity`
-    width: 50px;
-    height: 50px;
-    background: ${props => props.color};
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    margin: 5px;
-    box-shadow: 0px 0px 3px ${props => props.selected ? props.theme.success : props.theme.border};
-    border: ${props => props.selected ? 1 : 0}px solid ${props => props.theme.success};
-`
+const CenteredButton = styled(MainButton)``
 
 class NewDeck extends Component {
-    state = {
-        title: '',
-        color: ''
-    }
+  state = {
+    title: '',
+  }
 
-    handleTitleChange = (text) => {
-        this.setState( () => ({
-            title: text
-        }) )
-    }
+  handleTitleChange = text => {
+    this.setState(() => ({
+      title: text,
+    }))
+  }
 
-    handleColorChange = (color) => {
-        this.setState( () => ({
-            color
-        }))
-    }
+  handleAddDeck = () => {
+    const { onAddDeck } = this.props
+    const { title, color } = this.state
 
-    handleAddDeck = () => {
-        const {onAddDeck} = this.props
-        const {title, color} = this.state
+    onAddDeck({
+      title,
+      questions: [],
+    })
 
-        onAddDeck({
-            title,
-            color,
-            questions: []
-        })
+    this.setState(() => ({
+      title: '',
+    }))
+  }
 
-        this.setState(() => ({
-            title: '',
-            color: '',
-        }))
-    }
+  canAddDeck = () => this.state.title.length > 0
 
-    canAddDeck = () => this.state.color.length > 0 && this.state.title.length > 0
-
-    render = () => (
-        <View>
-            <InputGroup>
-                <Title>
-                    Title
-                </Title>
-                <Input 
-                    placeholder='Deck title'
-                    value={this.state.title}
-                    onChangeText={this.handleTitleChange}
-                />
-            </InputGroup>
-            <InputGroup>
-                <Title>
-                    Color
-                </Title>
-                <Colors>
-                    {theme.cardColors.map( color => (
-                        <Color 
-                            key={color}
-                            color={color}
-                            onPress={() => this.handleColorChange(color)}
-                            selected={color === this.state.color}
-                        >
-                            <Text>
-                                T
-                            </Text>
-                        </Color>
-                    ) )}
-                </Colors>
-            </InputGroup>
-            <MainButton 
-                disabled={!this.canAddDeck()}
-                text='ADD DECK'
-                onPress={this.handleAddDeck}
-            />
-        </View>
-    )
+  render = () => (
+    <View>
+      <InputGroup>
+        <Title>Deck title</Title>
+        <Input
+          autoFocus={true}
+          placeholder=""
+          value={this.state.title}
+          onChangeText={this.handleTitleChange}
+        />
+      </InputGroup>
+      <CenteredButton
+        disabled={!this.canAddDeck()}
+        text="ADD DECK"
+        onPress={this.handleAddDeck}
+        width={200}
+      />
+    </View>
+  )
 }
 
 export default NewDeck

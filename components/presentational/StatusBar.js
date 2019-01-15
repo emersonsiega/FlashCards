@@ -4,14 +4,14 @@ import { Constants } from 'expo'
 import styled from 'styled-components/native'
 
 const View = styled.View`
-    background-color: ${props => props.theme.headerBackground};
-    height: ${props => props.height};
+  background-color: ${props => props.theme.headerBackground};
+  height: ${props => props.height};
 `
 
 const StatusBar = () => (
-    <View height={Constants.statusBarHeight}>
-        <ReactStatusBar translucent barStyle='dark-content' />
-    </View>
+  <View height={Constants.statusBarHeight}>
+    <ReactStatusBar translucent barStyle="light-content" />
+  </View>
 )
 
 export default StatusBar

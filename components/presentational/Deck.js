@@ -8,7 +8,7 @@ const DeckContainer = styled.View`
   height: 100px;
   width: 100%;
   justify-content: center;
-  background-color: ${props => props.color};
+  background-color: ${props => props.theme.background};
   border-bottom-width: 0.5px;
   border-bottom-color: rgba(0, 0, 0, 0.3);
 `

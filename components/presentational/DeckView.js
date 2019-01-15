@@ -2,22 +2,14 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 import Text from './Text'
-import TwoOptionsButton from './TwoOptionsButton'
 import { formatDate } from '../../utils/DateFormatter'
+import { theme } from './ThemeProvider'
+import MainButton from './MainButton'
 
 const DeckViewContainer = styled.View`
-  margin: 10px;
   flex: 1;
-`
-
-const View = styled.View`
-  flex: 1;
-  background-color: ${props => props.color};
-  width: auto;
-  border-radius: 5px;
-  box-shadow: 0px 2px 6px ${props => props.theme.border};
   padding: 10px;
-  margin-bottom: 10px;
+  background-color: ${props => props.theme.background};
 `
 
 const Title = styled(Text)`
@@ -58,6 +50,10 @@ const ResultValue = styled(Text)`
   font-size: 25px;
   font-weight: bold;
 `
+const Bottom = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+`
 
 const DeckView = ({ deck, stats, addCard, startQuiz }) => {
   const { title, color, questions = [] } = deck
@@ -79,28 +75,34 @@ const DeckView = ({ deck, stats, addCard, startQuiz }) => {
 
   return (
     <DeckViewContainer>
-      <View color={color}>
-        <Title>{title}</Title>
-        <SubTitle>{questions.length} cards</SubTitle>
-        <LastResults>
-          {results.length === 0 ? 'No results found 🌵' : 'Last results 🚀'}
-        </LastResults>
-        <LastResultsView>
-          {results.map(res => (
-            <LastResultsRow key={res.timestamp}>
-              <ResultText>{formatDate(res.timestamp)}</ResultText>
-              <ResultValue>{Number(res.result).toFixed(2)}%</ResultValue>
-            </LastResultsRow>
-          ))}
-        </LastResultsView>
-      </View>
-      <TwoOptionsButton
-        textLeft="START QUIZ"
-        onPressLeft={startQuiz}
-        disabledLeft={questions.length === 0}
-        textRight="ADD CARD"
-        onPressRight={addCard}
-      />
+      <Title>{title}</Title>
+      <SubTitle>{questions.length} cards</SubTitle>
+      <LastResults>
+        {results.length === 0 ? 'No results found 🌵' : 'Last results 🚀'}
+      </LastResults>
+      <LastResultsView>
+        {results.map(res => (
+          <LastResultsRow key={res.timestamp}>
+            <ResultText>{formatDate(res.timestamp)}</ResultText>
+            <ResultValue>{Number(res.result).toFixed(2)}%</ResultValue>
+          </LastResultsRow>
+        ))}
+      </LastResultsView>
+      <Bottom>
+        <MainButton
+          text="START QUIZ"
+          onPress={startQuiz}
+          border={theme.successBorder}
+          disabled={questions.length === 0}
+          width={140}
+        />
+        <MainButton
+          text="ADD CARD"
+          onPress={addCard}
+          border={theme.defaultBorder}
+          width={140}
+        />
+      </Bottom>
     </DeckViewContainer>
   )
 }
