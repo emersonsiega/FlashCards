@@ -775,9 +775,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="227.13688"
-     inkscape:cy="598.41846"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="2483.6321"
+     inkscape:cy="810.58677"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -801,112 +801,119 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       style="opacity:1;fill:#cccccc;fill-opacity:0.94117647;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4322"
-       width="600"
-       height="600"
-       x="-652"
-       y="10.362198" />
     <g
-       id="g6159"
+       id="g4311"
+       transform="translate(277.18586,-84.852814)"
        inkscape:export-filename="/home/emerson/dev/cursos_udacity/curso_react/FlashCards/assets/splash.png"
        inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90"
-       transform="translate(27.01343,-83.12144)">
-      <circle
-         r="300"
-         cx="370.98657"
-         cy="357.48364"
-         id="path5471"
-         style="opacity:1;fill:url(#linearGradient5763);fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-      <g
-         id="g6139">
-        <g
-           id="g5825-7"
-           transform="translate(15.093734,-8.5713649)">
-          <rect
-             ry="20"
-             rx="20"
-             y="232.48364"
-             x="160.98656"
-             height="250"
-             width="420"
-             id="rect4145-4"
-             style="opacity:1;fill:#297d97;fill-opacity:0.94117647;stroke:url(#radialGradient4190-1);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5403-6)" />
-          <flowRoot
-             transform="translate(48.754189,204.53673)"
-             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#efefef;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             id="flowRoot4155-0"
-             xml:space="preserve"><flowRegion
-               id="flowRegion4157-3"><rect
-                 style="fill:#efefef;fill-opacity:1"
-                 y="114.94064"
-                 x="168.69548"
-                 height="73.944183"
-                 width="304.21179"
-                 id="rect4159-2" /></flowRegion><flowPara
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#efefef;fill-opacity:1"
-               id="flowPara4161-80">FlashCards</flowPara></flowRoot>        </g>
-        <g
-           transform="translate(0.507939,2.943353)"
-           id="g5825-5">
-          <rect
-             ry="20"
-             rx="20"
-             y="232.48364"
-             x="160.98656"
-             height="250"
-             width="420"
-             id="rect4145-0"
-             style="opacity:1;fill:#d400aa;fill-opacity:0.94117647;stroke:url(#radialGradient4190-9);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5403-7)" />
-          <flowRoot
-             transform="translate(48.754189,204.53673)"
-             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#efefef;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             id="flowRoot4155-6"
-             xml:space="preserve"><flowRegion
-               id="flowRegion4157-5"><rect
-                 style="fill:#efefef;fill-opacity:1"
-                 y="114.94064"
-                 x="168.69548"
-                 height="73.944183"
-                 width="304.21179"
-                 id="rect4159-0" /></flowRegion><flowPara
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#efefef;fill-opacity:1"
-               id="flowPara4161-8">FlashCards</flowPara></flowRoot>        </g>
-        <g
-           id="g6132">
-          <rect
-             ry="20"
-             rx="20"
-             y="248.48364"
-             x="144.98656"
-             height="250"
-             width="420"
-             id="rect4145"
-             style="opacity:1;fill:#ee8f59;fill-opacity:0.94117647;stroke:url(#radialGradient4190);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5403)" />
-          <flowRoot
-             transform="translate(-28.51667,234.52361)"
-             style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#efefef;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-             id="flowRoot4155"
-             xml:space="preserve"><flowRegion
-               id="flowRegion4157"><rect
-                 style="fill:#efefef;fill-opacity:1"
-                 y="114.94064"
-                 x="168.69548"
-                 height="144.6376"
-                 width="425.70932"
-                 id="rect4159" /></flowRegion><flowPara
-               id="flowPara5951"
-               style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70px;font-family:Purisa;-inkscape-font-specification:Purisa;text-align:center;text-anchor:middle;fill:#efefef;fill-opacity:1">FlashCards</flowPara></flowRoot>        </g>
-      </g>
+       inkscape:export-ydpi="90">
       <rect
-         y="88.076492"
-         x="130"
-         height="521"
-         width="521"
-         id="rect5182"
-         style="opacity:0.65060239;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+         y="-751.63782"
+         x="1608"
+         height="2436"
+         width="1242"
+         id="rect4322"
+         style="opacity:1;fill:#333333;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <g
+         transform="translate(1858.0134,108.87854)"
+         inkscape:export-ydpi="90"
+         inkscape:export-xdpi="90"
+         inkscape:export-filename="/home/emerson/dev/cursos_udacity/curso_react/FlashCards/assets/splash.png"
+         id="g6159">
+        <circle
+           style="opacity:1;fill:url(#linearGradient5763);fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="path5471"
+           cy="357.48364"
+           cx="370.98657"
+           r="300" />
+        <g
+           id="g6139">
+          <g
+             transform="translate(15.093734,-8.5713649)"
+             id="g5825-7">
+            <rect
+               style="opacity:1;fill:#297d97;fill-opacity:0.94117647;stroke:url(#radialGradient4190-1);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5403-6)"
+               id="rect4145-4"
+               width="420"
+               height="250"
+               x="160.98656"
+               y="232.48364"
+               rx="20"
+               ry="20" />
+            <flowRoot
+               xml:space="preserve"
+               id="flowRoot4155-0"
+               style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#efefef;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               transform="translate(48.754189,204.53673)"><flowRegion
+                 id="flowRegion4157-3"><rect
+                   id="rect4159-2"
+                   width="304.21179"
+                   height="73.944183"
+                   x="168.69548"
+                   y="114.94064"
+                   style="fill:#efefef;fill-opacity:1" /></flowRegion><flowPara
+                 id="flowPara4161-80"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#efefef;fill-opacity:1">FlashCards</flowPara></flowRoot>          </g>
+          <g
+             id="g5825-5"
+             transform="translate(0.507939,2.943353)">
+            <rect
+               style="opacity:1;fill:#d400aa;fill-opacity:0.94117647;stroke:url(#radialGradient4190-9);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5403-7)"
+               id="rect4145-0"
+               width="420"
+               height="250"
+               x="160.98656"
+               y="232.48364"
+               rx="20"
+               ry="20" />
+            <flowRoot
+               xml:space="preserve"
+               id="flowRoot4155-6"
+               style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#efefef;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               transform="translate(48.754189,204.53673)"><flowRegion
+                 id="flowRegion4157-5"><rect
+                   id="rect4159-0"
+                   width="304.21179"
+                   height="73.944183"
+                   x="168.69548"
+                   y="114.94064"
+                   style="fill:#efefef;fill-opacity:1" /></flowRegion><flowPara
+                 id="flowPara4161-8"
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:60px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;text-align:center;text-anchor:middle;fill:#efefef;fill-opacity:1">FlashCards</flowPara></flowRoot>          </g>
+          <g
+             id="g6132">
+            <rect
+               style="opacity:1;fill:#ee8f59;fill-opacity:0.94117647;stroke:url(#radialGradient4190);stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter5403)"
+               id="rect4145"
+               width="420"
+               height="250"
+               x="144.98656"
+               y="248.48364"
+               rx="20"
+               ry="20" />
+            <flowRoot
+               xml:space="preserve"
+               id="flowRoot4155"
+               style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#efefef;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+               transform="translate(-28.51667,234.52361)"><flowRegion
+                 id="flowRegion4157"><rect
+                   id="rect4159"
+                   width="425.70932"
+                   height="144.6376"
+                   x="168.69548"
+                   y="114.94064"
+                   style="fill:#efefef;fill-opacity:1" /></flowRegion><flowPara
+                 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:70px;font-family:Purisa;-inkscape-font-specification:Purisa;text-align:center;text-anchor:middle;fill:#efefef;fill-opacity:1"
+                 id="flowPara5951">FlashCards</flowPara></flowRoot>          </g>
+        </g>
+        <rect
+           style="opacity:0.65060239;fill:none;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           id="rect5182"
+           width="521"
+           height="521"
+           x="130"
+           y="88.076492" />
+      </g>
     </g>
     <g
        id="g6159-2"
