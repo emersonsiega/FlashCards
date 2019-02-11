@@ -3,15 +3,7 @@ import styled from 'styled-components/native'
 
 import Text from './Text'
 import DeleteSwipeable from './DeleteSwipeable'
-
-const DeckContainer = styled.View`
-  height: 100px;
-  width: 100%;
-  justify-content: center;
-  background-color: ${props => props.theme.background};
-  border-bottom-width: 0.5px;
-  border-bottom-color: rgba(0, 0, 0, 0.3);
-`
+import DeckCard from './DeckCard'
 
 const TouchableDeck = styled.TouchableOpacity`
   margin: 10px;
@@ -27,8 +19,8 @@ const SubTitle = styled(Text)`
   color: ${props => props.theme.subText};
 `
 
-const Deck = ({ title, color, questions = [], onPress, onDelete }) => (
-  <DeckContainer color={color}>
+const Deck = ({ title, questions = [], onPress, onDelete }) => (
+  <DeckCard>
     <DeleteSwipeable id={title} onComplete={onDelete}>
       <TouchableDeck onPress={onPress}>
         <>
@@ -37,7 +29,7 @@ const Deck = ({ title, color, questions = [], onPress, onDelete }) => (
         </>
       </TouchableDeck>
     </DeleteSwipeable>
-  </DeckContainer>
+  </DeckCard>
 )
 
 export default Deck

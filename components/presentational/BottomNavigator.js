@@ -10,6 +10,7 @@ import { theme } from './ThemeProvider'
 import DecksListContainer from '../container/DecksListContainer'
 import NewDeckContainer from '../container/NewDeckContainer'
 import DeckViewContainer from '../container/DeckViewContainer'
+import NewCardContainer from '../container/NewCardContainer'
 
 const BottomNavigator = createBottomTabNavigator(
   {
@@ -71,6 +72,19 @@ const StackNavigator = createStackNavigator({
     screen: DeckViewContainer,
     navigationOptions: {
       title: 'Deck',
+      headerTintColor: theme.text,
+      headerStyle: {
+        backgroundColor: theme.headerBackground,
+      },
+      headerTitleStyle: {
+        fontSize: 25,
+      },
+    },
+  },
+  NewCardView: {
+    screen: NewCardContainer,
+    navigationOptions: {
+      title: 'New Card',
       headerTintColor: theme.text,
       headerStyle: {
         backgroundColor: theme.headerBackground,

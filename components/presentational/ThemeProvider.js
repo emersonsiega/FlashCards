@@ -10,7 +10,7 @@ const theme = {
   background: '#333',
   main: '#363CBC',
 
-  defaultBorder: '#6042D9',
+  defaultBorder: '#EE8F59',
   successBorder: '#B4E99A',
 
   inactiveBorder: '#989898',

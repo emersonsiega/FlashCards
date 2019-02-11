@@ -5,17 +5,23 @@ import { FontAwesome } from '@expo/vector-icons'
 
 import { theme } from './ThemeProvider'
 
+const SwipeableContainer = styled(Swipeable)`
+  justify-content: center;
+  align-items: center;
+`
+
 const OptionDelete = styled.View`
-  height: 80px;
-  width: 80px;
-  border-radius: 80px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  margin-left: 10px;
   align-items: center;
   justify-content: center;
   margin-right: 20px;
   background-color: ${props =>
     props.activated ? props.theme.success : props.theme.headerBackground};
   box-shadow: 0px 0px 3px
-    ${props => (props.activated ? props.theme.success : props.theme.border)};
+    ${props => (props.activated ? props.theme.successBorder : props.theme.defaultBorder)};
 `
 
 class DeleteSwipeable extends Component {
@@ -47,10 +53,14 @@ class DeleteSwipeable extends Component {
     const { actionActivated } = this.state
 
     return (
-      <Swipeable
+      <SwipeableContainer
         rightContent={
           <OptionDelete activated={actionActivated}>
-            <FontAwesome name="trash-o" size={iconSize} color={theme.textDark} />
+            <FontAwesome
+              name="trash-o"
+              size={iconSize}
+              color={actionActivated ? theme.textDark : theme.text}
+            />
           </OptionDelete>
         }
         rightButtonWidth={0}
@@ -59,7 +69,7 @@ class DeleteSwipeable extends Component {
         onRightActionDeactivate={() => this.setActivated(false)}
         onRightActionComplete={() => this.setCompleted(id)}>
         {children}
-      </Swipeable>
+      </SwipeableContainer>
     )
   }
 }
