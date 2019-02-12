@@ -24,16 +24,24 @@ const TouchableMainColored = styled.TouchableOpacity`
       ? props.border
       : props.theme.defaultBorder};
   border-radius: 100px;
-  height: 87px;
+  height: 67px;
   width: ${props => (props.width ? props.width : 100)}px;
 `
 
-const MainButton = ({ text, onPress, disabled = false, border = undefined, width }) => (
+const MainButton = ({
+  text,
+  onPress,
+  disabled = false,
+  border = undefined,
+  width,
+  ...props
+}) => (
   <TouchableMainColored
     onPress={onPress}
     disabled={disabled}
     border={border}
-    width={width}>
+    width={width}
+    {...props}>
     <Text>{text}</Text>
   </TouchableMainColored>
 )
