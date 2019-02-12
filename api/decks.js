@@ -47,31 +47,23 @@ const removeDecks = () => {
   return AsyncStorage.removeItem(DECKS_STORAGE_KEY)
 }
 
-// I think it's not necessary
-// const addQuestion = ( deckName, question ) => {
-//     return AsyncStorage.getItem( DECKS_STORAGE_KEY )
-//         .then( JSON.parse )
-//         .then( decks => ({
-//             ...decks,
-//             [deckName]: {
-//                 ...decks[deckName],
-//                 questions: {
-//                     ...decks[deckName].questions,
-//                     question
-//                 }
-//             }
-//         }) )
-// }
+const addQuestion = async (deckName, question) => {
+  const decks = await getDecks()
+  const newDecks = {
+    ...decks,
+    [deckName]: {
+      ...decks[deckName],
+      questions: [...decks[deckName].questions, question],
+    },
+  }
+
+  await setDecks(newDecks)
+
+  return newDecks[deckName]
+}
 
 //remove card
 
 //etc
 
-export {
-  getDecks,
-  setDecks,
-  addDeck,
-  // addQuestion,
-  removeDeck,
-  removeDecks,
-}
+export { getDecks, setDecks, addDeck, addQuestion, removeDeck, removeDecks }

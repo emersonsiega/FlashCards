@@ -32,17 +32,34 @@ const CenteredButton = styled(MainButton)`
   margin-bottom: 10px;
 `
 
+const INITIAL_STATE = {
+  question: undefined,
+  answer: undefined,
+}
+
 class NewCard extends Component {
-  state = {
-    question: '',
-    answer: '',
-  }
+  state = INITIAL_STATE
 
   handleChange = (text, field) => {
     this.setState(() => ({
       [field]: text,
     }))
   }
+
+  onPress = e => {
+    e.preventDefault()
+    const { question, answer } = this.state
+    const { deck } = this.props
+
+    this.props.onAddQuestion(deck, {
+      question,
+      answer,
+    })
+
+    this.setState(() => INITIAL_STATE)
+  }
+
+  isDisabled = () => !this.state.question || !this.state.answer
 
   render = () => {
     const { title, questions } = this.props.deck
@@ -65,7 +82,12 @@ class NewCard extends Component {
             onChange={text => this.handleChange(text, 'answer')}
           />
         </Content>
-        <CenteredButton text="ADD CARD" onPress={() => alert('add card!')} width={200} />
+        <CenteredButton
+          text="ADD CARD"
+          onPress={this.onPress}
+          disabled={this.isDisabled()}
+          width={200}
+        />
       </NewCardContainer>
     )
   }

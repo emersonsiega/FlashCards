@@ -1,4 +1,4 @@
-import { FETCH_DECKS, ADD_DECK, DELETE_DECK } from '../actions/decks'
+import { FETCH_DECKS, ADD_DECK, DELETE_DECK, ADD_QUESTION_CARD } from '../actions/decks'
 
 import { formatDeck } from '../../utils/DeckFormatter'
 
@@ -9,6 +9,7 @@ const decks = (state = {}, action) => {
         ...state,
         ...(action.decks || {}),
       }
+    case ADD_QUESTION_CARD:
     case ADD_DECK:
       return {
         ...state,
