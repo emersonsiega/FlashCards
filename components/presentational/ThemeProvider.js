@@ -3,7 +3,7 @@ import { ThemeProvider as Provider } from 'styled-components/native'
 
 const theme = {
   text: '#EFEFEF',
-  subText: '#D5D5D5',
+  subText: '#8A8A8A',
   textDark: '#333',
   inactiveMenu: '#8A8A8A',
   headerBackground: '#242424',

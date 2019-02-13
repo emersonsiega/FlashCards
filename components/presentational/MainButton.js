@@ -3,6 +3,10 @@ import styled from 'styled-components/native'
 
 import Text from './Text'
 
+const ButtonText = styled(Text)`
+  font-size: 22px;
+`
+
 const TouchableMainColored = styled.TouchableOpacity`
   padding: 10px;
   justify-content: center;
@@ -42,7 +46,7 @@ const MainButton = ({
     border={border}
     width={width}
     {...props}>
-    <Text>{text}</Text>
+    <ButtonText>{text}</ButtonText>
   </TouchableMainColored>
 )
 

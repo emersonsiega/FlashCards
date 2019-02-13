@@ -94,13 +94,13 @@ const DeckView = ({ deck, stats, addCard, startQuiz }) => {
           onPress={startQuiz}
           border={theme.successBorder}
           disabled={questions.length === 0}
-          width={140}
+          width={130}
         />
         <MainButton
           text="ADD CARD"
           onPress={addCard}
           border={theme.defaultBorder}
-          width={140}
+          width={130}
         />
       </Bottom>
     </DeckViewContainer>

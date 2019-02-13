@@ -11,6 +11,7 @@ import DecksListContainer from '../container/DecksListContainer'
 import NewDeckContainer from '../container/NewDeckContainer'
 import DeckViewContainer from '../container/DeckViewContainer'
 import NewCardContainer from '../container/NewCardContainer'
+import QuizViewContainer from '../container/QuizViewContainer'
 
 const BottomNavigator = createBottomTabNavigator(
   {
@@ -64,6 +65,16 @@ const BottomNavigator = createBottomTabNavigator(
   }
 )
 
+const stackNavitationOptions = {
+  headerTintColor: theme.text,
+  headerStyle: {
+    backgroundColor: theme.headerBackground,
+  },
+  headerTitleStyle: {
+    fontSize: 25,
+  },
+}
+
 const StackNavigator = createStackNavigator({
   Home: {
     screen: BottomNavigator,
@@ -72,26 +83,21 @@ const StackNavigator = createStackNavigator({
     screen: DeckViewContainer,
     navigationOptions: {
       title: 'Deck',
-      headerTintColor: theme.text,
-      headerStyle: {
-        backgroundColor: theme.headerBackground,
-      },
-      headerTitleStyle: {
-        fontSize: 25,
-      },
+      ...stackNavitationOptions,
     },
   },
   NewCardView: {
     screen: NewCardContainer,
     navigationOptions: {
       title: 'New Card',
-      headerTintColor: theme.text,
-      headerStyle: {
-        backgroundColor: theme.headerBackground,
-      },
-      headerTitleStyle: {
-        fontSize: 25,
-      },
+      ...stackNavitationOptions,
+    },
+  },
+  QuizView: {
+    screen: QuizViewContainer,
+    navigationOptions: {
+      title: 'Quiz',
+      ...stackNavitationOptions,
     },
   },
 })

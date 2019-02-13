@@ -14,7 +14,8 @@ class DeckViewContainer extends Component {
   }
 
   onStartQuiz = () => {
-    alert('Start quiz')
+    const { toQuiz, deck } = this.props
+    toQuiz(deck)
   }
 
   render = () => (
@@ -39,6 +40,8 @@ const mapStateToProps = ({ decks = {}, stats = {} }, { navigation }) => {
 const mapDispatchToProps = (_, { navigation }) => ({
   toNewCardView: deck =>
     navigation.dispatch(navigation.navigate('NewCardView', { deck })),
+  toQuiz: deck =>
+    navigation.dispatch(navigation.navigate('QuizView', { deckTitle: deck.title })),
 })
 
 export default connect(
