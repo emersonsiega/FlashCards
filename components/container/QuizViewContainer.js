@@ -14,10 +14,26 @@ class QuizViewContainer extends Component {
     this.state = INITIAL_STATE
   }
 
+  toNextQuestion = () => {
+    if (this.state.questionIndex < this.props.deck.questions.length - 1) {
+      this.setState(state => ({
+        questionIndex: state.questionIndex + 1,
+      }))
+    } else {
+      alert('finished!')
+    }
+  }
+
   render = () => {
     const { deck } = this.props
 
-    return <QuizQuestion questionIndex={this.state.questionIndex} deck={deck} />
+    return (
+      <QuizQuestion
+        questionIndex={this.state.questionIndex}
+        deck={deck}
+        toNextQuestion={this.toNextQuestion}
+      />
+    )
   }
 }
 

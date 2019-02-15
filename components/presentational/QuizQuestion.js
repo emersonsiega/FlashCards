@@ -49,7 +49,7 @@ const ButtonGroup = styled.View`
 
 const INITIAL_STATE = {
   showAnswer: false,
-  result: '',
+  questionResults: [],
 }
 
 class QuizQuestion extends Component {
@@ -59,7 +59,17 @@ class QuizQuestion extends Component {
     this.state = INITIAL_STATE
   }
 
-  showAnswer = () => this.setState(() => ({ showAnswer: true }))
+  toggleShowAnswer = () => this.setState(state => ({ showAnswer: !state.showAnswer }))
+
+  addQuestionAnswer = (index, result) => {
+    this.setState(state => ({
+      questionResults: [...state.questionResults, { [index]: result }],
+    }))
+    this.toggleShowAnswer()
+
+    //TODO: Need to send answers array every time. Improve this!
+    this.props.toNextQuestion()
+  }
 
   render = () => {
     const { deck, questionIndex } = this.props
@@ -80,17 +90,17 @@ class QuizQuestion extends Component {
             <CenteredButton
               text="CORRECT"
               border={theme.successBorder}
-              onPress={() => alert('parabens...')}
+              onPress={() => this.addQuestionAnswer(questionIndex, true)}
               width={130}
             />
             <CenteredButton
               text="INCORRECT"
-              onPress={() => alert('Burrao!')}
+              onPress={() => this.addQuestionAnswer(questionIndex, false)}
               width={130}
             />
           </ButtonGroup>
         ) : (
-          <CenteredButton text="ANSWER" onPress={this.showAnswer} width={200} />
+          <CenteredButton text="ANSWER" onPress={this.toggleShowAnswer} width={200} />
         )}
       </QuizQuestionContainer>
     )
