@@ -12,6 +12,13 @@ const View = styled.KeyboardAvoidingView`
   align-items: center;
 `
 
+const CenteredButton = styled(MainButton)`
+  margin-top: auto;
+  margin-bottom: 10px;
+  align-self: center;
+  margin-bottom: 10px;
+`
+
 class NewDeck extends Component {
   state = {
     title: '',
@@ -40,13 +47,13 @@ class NewDeck extends Component {
   canAddDeck = () => this.state.title.length > 0
 
   render = () => (
-    <View>
+    <View behavior="padding">
       <InputGroup
         title="Deck title"
         value={this.state.title}
         onChange={this.handleTitleChange}
       />
-      <MainButton
+      <CenteredButton
         disabled={!this.canAddDeck()}
         text="ADD DECK"
         onPress={this.handleAddDeck}

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { routes } from '../../routes'
 import { handleAddQuestionCard } from '../../store/actions/decks'
 import NewCard from '../presentational/NewCard'
 
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch, { navigation }) => ({
   addQuestion: async (deck, question) => {
     await dispatch(handleAddQuestionCard(deck, question))
     navigation.dispatch(
-      navigation.navigate('DeckView', {
+      navigation.navigate(routes.DeckView, {
         deckTitle: deck.title,
       })
     )

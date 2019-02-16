@@ -5,6 +5,7 @@ import Text from './Text'
 import { formatDate } from '../../utils/DateFormatter'
 import { theme } from './ThemeProvider'
 import MainButton from './MainButton'
+import DeckCard from './DeckCard'
 
 const DeckViewContainer = styled.View`
   flex: 1;
@@ -12,22 +13,10 @@ const DeckViewContainer = styled.View`
   background-color: ${props => props.theme.background};
 `
 
-const Title = styled(Text)`
-  margin: 10px 10px 0px 10px;
-  text-align: center;
-  font-size: 35px;
-`
-
-const SubTitle = styled.Text`
-  color: ${props => props.theme.subText};
-  font-size: 25px;
-  margin-bottom: 20px;
-  text-align: center;
-`
-
 const LastResults = styled(Text)`
   font-size: 30px;
   text-align: center;
+  margin-top: 20px;
 `
 
 const LastResultsView = styled.View`
@@ -56,35 +45,20 @@ const Bottom = styled.View`
 `
 
 const DeckView = ({ deck, stats, addCard, startQuiz }) => {
-  const { title, color, questions = [] } = deck
-  const timestamp = new Date()
-
-  //TODO: Remove fake data
-  const {
-    results = [
-      {
-        timestamp: timestamp.setMinutes(20),
-        result: 70,
-      },
-      {
-        timestamp: timestamp.setMinutes(10),
-        result: 65,
-      },
-    ],
-  } = stats
+  const { title, questions = [] } = deck
+  const { results = [] } = stats
 
   return (
     <DeckViewContainer>
-      <Title>{title}</Title>
-      <SubTitle>{questions.length} cards</SubTitle>
+      <DeckCard title={title} cards={questions.length} />
       <LastResults>
-        {results.length === 0 ? 'No results found 🌵' : 'Last results 🚀'}
+        {results.length === 0 ? 'No results found 🌵' : 'Last results'}
       </LastResults>
       <LastResultsView>
-        {results.map(res => (
+        {results.slice(0, 7).map(res => (
           <LastResultsRow key={res.timestamp}>
             <ResultText>{formatDate(res.timestamp)}</ResultText>
-            <ResultValue>{Number(res.result).toFixed(2)}%</ResultValue>
+            <ResultValue>{res.result} %</ResultValue>
           </LastResultsRow>
         ))}
       </LastResultsView>
@@ -94,14 +68,8 @@ const DeckView = ({ deck, stats, addCard, startQuiz }) => {
           onPress={startQuiz}
           border={theme.successBorder}
           disabled={questions.length === 0}
-          width={130}
         />
-        <MainButton
-          text="ADD CARD"
-          onPress={addCard}
-          border={theme.defaultBorder}
-          width={130}
-        />
+        <MainButton text="ADD CARD" onPress={addCard} border={theme.defaultBorder} />
       </Bottom>
     </DeckViewContainer>
   )

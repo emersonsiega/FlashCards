@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { KeyboardAvoidingView } from 'react-native'
 
-import Title from './Title'
-import SubTitle from './SubTitle'
 import InputGroup from './InputGroup'
 import MainButton from './MainButton'
 import DeckCard from './DeckCard'
@@ -11,19 +9,17 @@ import DeckCard from './DeckCard'
 const NewCardContainer = styled(KeyboardAvoidingView)`
   background-color: ${props => props.theme.background};
   flex: 1;
+  padding: 10px;
   justify-content: center;
 `
 
 const Content = styled.View`
+  margin-top: auto;
   padding: 0px 10px 10px 10px;
 `
 
-const DeckContainer = styled(DeckCard)`
-  height: 70px;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: auto;
+const DeckCardContainer = styled(DeckCard)`
+  margin-bottom: 10px;
 `
 
 const CenteredButton = styled(MainButton)`
@@ -66,10 +62,7 @@ class NewCard extends Component {
 
     return (
       <NewCardContainer behavior="padding">
-        <DeckContainer>
-          <Title>{title}</Title>
-          <SubTitle>{questions.length} cards</SubTitle>
-        </DeckContainer>
+        <DeckCardContainer title={title} cards={questions.length} />
         <Content>
           <InputGroup
             title="Question"

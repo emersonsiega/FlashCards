@@ -7,15 +7,18 @@ import {
 import { MaterialCommunityIcons, MaterialIcons, Ionicons } from '@expo/vector-icons'
 
 import { theme } from './ThemeProvider'
+import { routes } from '../../routes'
+
 import DecksListContainer from '../container/DecksListContainer'
 import NewDeckContainer from '../container/NewDeckContainer'
 import DeckViewContainer from '../container/DeckViewContainer'
 import NewCardContainer from '../container/NewCardContainer'
 import QuizViewContainer from '../container/QuizViewContainer'
+import QuizResultContainer from '../container/QuizResultContainer'
 
 const BottomNavigator = createBottomTabNavigator(
   {
-    Decks: {
+    [routes.Decks]: {
       screen: DecksListContainer,
       navigationOptions: {
         tabBarLabel: 'DECKS',
@@ -24,7 +27,7 @@ const BottomNavigator = createBottomTabNavigator(
         ),
       },
     },
-    NewDeck: {
+    [routes.NewDeck]: {
       screen: NewDeckContainer,
       navigationOptions: {
         tabBarLabel: 'NEW DECK',
@@ -33,7 +36,7 @@ const BottomNavigator = createBottomTabNavigator(
         ),
       },
     },
-    Stats: {
+    [routes.Stats]: {
       screen: DecksListContainer,
       navigationOptions: {
         tabBarLabel: 'STATS',
@@ -76,27 +79,34 @@ const stackNavitationOptions = {
 }
 
 const StackNavigator = createStackNavigator({
-  Home: {
+  [routes.Home]: {
     screen: BottomNavigator,
   },
-  DeckView: {
+  [routes.DeckView]: {
     screen: DeckViewContainer,
     navigationOptions: {
       title: 'Deck',
       ...stackNavitationOptions,
     },
   },
-  NewCardView: {
+  [routes.NewCardView]: {
     screen: NewCardContainer,
     navigationOptions: {
       title: 'New Card',
       ...stackNavitationOptions,
     },
   },
-  QuizView: {
+  [routes.QuizView]: {
     screen: QuizViewContainer,
     navigationOptions: {
       title: 'Quiz',
+      ...stackNavitationOptions,
+    },
+  },
+  [routes.QuizResultView]: {
+    screen: QuizResultContainer,
+    navigationOptions: {
+      title: 'Quiz result',
       ...stackNavitationOptions,
     },
   },

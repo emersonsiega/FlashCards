@@ -22,10 +22,7 @@ import { formatDeck } from '../utils/DeckFormatter'
 const DECKS_STORAGE_KEY = 'FlashCards:decks'
 
 const getDecks = () => {
-  return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(decks => {
-    const converted = JSON.parse(decks)
-    return converted
-  })
+  return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(JSON.parse)
 }
 
 const setDecks = decks => {
@@ -48,7 +45,7 @@ const removeDecks = () => {
 }
 
 const addQuestion = async (deckName, question) => {
-  const decks = await getDecks()
+  const decks = (await getDecks()) || {}
   const newDecks = {
     ...decks,
     [deckName]: {
@@ -61,9 +58,5 @@ const addQuestion = async (deckName, question) => {
 
   return newDecks[deckName]
 }
-
-//remove card
-
-//etc
 
 export { getDecks, setDecks, addDeck, addQuestion, removeDeck, removeDecks }

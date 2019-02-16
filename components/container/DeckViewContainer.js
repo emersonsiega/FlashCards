@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import DeckView from '../presentational/DeckView'
+import { routes } from '../../routes'
 
 class DeckViewContainer extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -39,9 +40,9 @@ const mapStateToProps = ({ decks = {}, stats = {} }, { navigation }) => {
 
 const mapDispatchToProps = (_, { navigation }) => ({
   toNewCardView: deck =>
-    navigation.dispatch(navigation.navigate('NewCardView', { deck })),
+    navigation.dispatch(navigation.navigate(routes.NewCardView, { deck })),
   toQuiz: deck =>
-    navigation.dispatch(navigation.navigate('QuizView', { deckTitle: deck.title })),
+    navigation.dispatch(navigation.navigate(routes.QuizView, { deckTitle: deck.title })),
 })
 
 export default connect(

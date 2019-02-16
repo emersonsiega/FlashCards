@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import Title from './Title'
 import Text from './Text'
-import SubTitle from './SubTitle'
 import DeckCard from './DeckCard'
 import MainButton from './MainButton'
 import { theme } from './ThemeProvider'
@@ -13,15 +11,6 @@ const QuizQuestionContainer = styled.View`
   flex: 1;
   justify-content: center;
   padding: 10px;
-`
-
-const DeckTitle = styled(DeckCard)`
-  height: 70px;
-  flex-direction: row;
-  border: solid 0.25px ${props => props.theme.inactiveBorder};
-  border-radius: 10px;
-  justify-content: space-around;
-  align-items: center;
 `
 
 const Question = styled(Text)`
@@ -49,7 +38,6 @@ const ButtonGroup = styled.View`
 
 const INITIAL_STATE = {
   showAnswer: false,
-  questionResults: [],
 }
 
 class QuizQuestion extends Component {
@@ -61,14 +49,10 @@ class QuizQuestion extends Component {
 
   toggleShowAnswer = () => this.setState(state => ({ showAnswer: !state.showAnswer }))
 
-  addQuestionAnswer = (index, result) => {
-    this.setState(state => ({
-      questionResults: [...state.questionResults, { [index]: result }],
-    }))
+  answerQuestion = (index, result) => {
     this.toggleShowAnswer()
 
-    //TODO: Need to send answers array every time. Improve this!
-    this.props.toNextQuestion()
+    this.props.toNextQuestion(index, result)
   }
 
   render = () => {
@@ -79,10 +63,7 @@ class QuizQuestion extends Component {
 
     return (
       <QuizQuestionContainer>
-        <DeckTitle>
-          <Title>{title}</Title>
-          <SubTitle>{questionIndex + 1 + '/' + questions.length}</SubTitle>
-        </DeckTitle>
+        <DeckCard title={title} cards={questions.length} step={questionIndex + 1} />
         <Question showAnswer={showAnswer}>{question}</Question>
         {showAnswer && <Answer>{answer}</Answer>}
         {showAnswer ? (
@@ -90,13 +71,11 @@ class QuizQuestion extends Component {
             <CenteredButton
               text="CORRECT"
               border={theme.successBorder}
-              onPress={() => this.addQuestionAnswer(questionIndex, true)}
-              width={130}
+              onPress={() => this.answerQuestion(questionIndex, true)}
             />
             <CenteredButton
               text="INCORRECT"
-              onPress={() => this.addQuestionAnswer(questionIndex, false)}
-              width={130}
+              onPress={() => this.answerQuestion(questionIndex, false)}
             />
           </ButtonGroup>
         ) : (

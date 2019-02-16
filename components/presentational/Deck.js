@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 import DeleteSwipeable from './DeleteSwipeable'
-import DeckCard from './DeckCard'
 import Title from './Title'
 import SubTitle from './SubTitle'
 
@@ -11,8 +10,17 @@ const TouchableDeck = styled.TouchableOpacity`
   justify-content: space-between;
 `
 
+const DeckContainer = styled.View`
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+  background-color: ${props => props.theme.background};
+  border-bottom-width: 0.25px;
+  border-bottom-color: ${props => props.theme.inactiveBorder};
+`
+
 const Deck = ({ title, questions = [], onPress, onDelete }) => (
-  <DeckCard>
+  <DeckContainer>
     <DeleteSwipeable id={title} onComplete={onDelete}>
       <TouchableDeck onPress={onPress}>
         <>
@@ -21,7 +29,7 @@ const Deck = ({ title, questions = [], onPress, onDelete }) => (
         </>
       </TouchableDeck>
     </DeleteSwipeable>
-  </DeckCard>
+  </DeckContainer>
 )
 
 export default Deck

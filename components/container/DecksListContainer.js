@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import { routes } from '../../routes'
 import ScrollView from '../presentational/ScrollView'
 import Deck from '../presentational/Deck'
 import EmptyListText from '../presentational/EmptyListText'
@@ -31,11 +32,10 @@ const mapStateToProps = ({ decks = {} }) => ({
   decks: Object.values(decks),
 })
 
-//TODO: Navigation doesn't work!
 const mapDispatchToProps = (dispatch, { navigation }) => ({
   toDeckView: deckTitle =>
     navigation.dispatch(
-      navigation.navigate('DeckView', {
+      navigation.navigate(routes.DeckView, {
         deckTitle: deckTitle,
       })
     ),

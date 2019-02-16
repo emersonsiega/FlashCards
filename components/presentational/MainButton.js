@@ -37,7 +37,7 @@ const MainButton = ({
   onPress,
   disabled = false,
   border = undefined,
-  width,
+  width = 130,
   ...props
 }) => (
   <TouchableMainColored
