@@ -11,6 +11,7 @@ import { routes } from '../../routes'
 
 import DecksListContainer from '../container/DecksListContainer'
 import NewDeckContainer from '../container/NewDeckContainer'
+import StatsViewContainer from '../container/StatsViewContainer'
 import DeckViewContainer from '../container/DeckViewContainer'
 import NewCardContainer from '../container/NewCardContainer'
 import QuizViewContainer from '../container/QuizViewContainer'
@@ -37,7 +38,7 @@ const BottomNavigator = createBottomTabNavigator(
       },
     },
     [routes.Stats]: {
-      screen: DecksListContainer,
+      screen: StatsViewContainer,
       navigationOptions: {
         tabBarLabel: 'STATS',
         tabBarIcon: ({ tintColor }) => (

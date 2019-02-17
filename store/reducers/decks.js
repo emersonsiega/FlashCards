@@ -10,16 +10,18 @@ const decks = (state = {}, action) => {
         ...(action.decks || {}),
       }
     case ADD_QUESTION_CARD:
-    case ADD_DECK:
       return {
         ...state,
         ...formatDeck(action.deck),
       }
+    case ADD_DECK:
+      return {
+        ...formatDeck(action.deck),
+        ...state,
+      }
     case DELETE_DECK:
       const newState = { ...state }
       delete newState[action.deckTitle]
-
-      console.log(newState)
 
       return newState
     default:
