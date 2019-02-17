@@ -3,6 +3,10 @@ import { connect } from 'react-redux'
 
 import { routes } from '../../routes'
 import { handleAddStats } from '../../store/actions/stats'
+import {
+  clearLocalNotifications,
+  setLocalNotification,
+} from '../../utils/NotificationHelper'
 import QuizQuestion from '../presentational/QuizQuestion'
 
 const INITIAL_STATE = {
@@ -32,6 +36,7 @@ class QuizViewContainer extends Component {
     const deckName = deck.title
 
     await saveResult(deckName, result)
+    clearLocalNotifications().then(setLocalNotification)
     toResultPage(deckName)
     this.setState(INITIAL_STATE)
   }

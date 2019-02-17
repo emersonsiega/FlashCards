@@ -6,42 +6,11 @@ import ThemeProvider from './components/presentational/ThemeProvider'
 import BottomNavigatorContainer from './components/container/BottomNavigatorContainer'
 import StatusBar from './components/presentational/StatusBar'
 
-// import { getDecks, setDecks, removeDecks } from './api/decks'
+import { setLocalNotification } from './utils/NotificationHelper'
 
 class App extends Component {
   async componentDidMount() {
-    //TODO: Remove
-    // await removeDecks()
-    // setDecks({
-    //   'Math': {
-    //     title: 'Math',
-    //     color: theme.cardColors[0],
-    //     questions: [
-    //       {
-    //         question: 'Question one?',
-    //         answer: "Answer one"
-    //       },
-    //       {
-    //         question: 'Question two?',
-    //         answer: "Answer two"
-    //       }
-    //     ]
-    //   },
-    //   'History': {
-    //     title: 'History',
-    //     color: theme.cardColors[1],
-    //     questions: [
-    //       {
-    //         question: 'Question one?',
-    //         answer: "Answer one"
-    //       },
-    //       {
-    //         question: 'Question two?',
-    //         answer: "Answer two"
-    //       }
-    //     ]
-    //   }
-    // }).then(console.log('Default decks saved'))
+    setLocalNotification()
   }
 
   render = () => (
