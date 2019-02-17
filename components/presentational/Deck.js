@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components/native'
+import { LayoutAnimation } from 'react-native'
 
 import DeleteSwipeable from './DeleteSwipeable'
 import Title from './Title'
@@ -22,7 +23,11 @@ const DeckContainer = styled.View`
 const Deck = ({ title, questions = [], onPress, onDelete }) => (
   <DeckContainer>
     <DeleteSwipeable id={title} onComplete={onDelete}>
-      <TouchableDeck onPress={onPress}>
+      <TouchableDeck
+        onPress={() => {
+          LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+          onPress()
+        }}>
         <>
           <Title>{title}</Title>
           <SubTitle>{questions.length} cards</SubTitle>

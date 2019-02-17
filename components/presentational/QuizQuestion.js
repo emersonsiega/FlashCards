@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { LayoutAnimation } from 'react-native'
 import styled from 'styled-components'
 
 import Text from './Text'
@@ -47,7 +48,10 @@ class QuizQuestion extends Component {
     this.state = INITIAL_STATE
   }
 
-  toggleShowAnswer = () => this.setState(state => ({ showAnswer: !state.showAnswer }))
+  toggleShowAnswer = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+    this.setState(state => ({ showAnswer: !state.showAnswer }))
+  }
 
   answerQuestion = (index, result) => {
     this.toggleShowAnswer()
